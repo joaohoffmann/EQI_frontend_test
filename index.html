@@ -23,18 +23,16 @@
               <img src="./img/info_icon.png" alt="">
             </a>  <br>
             <form class="left__form" >
-              <fieldset>
-                <label for="bruto">Bruto</label>
+              <div class="custom__radio">
                 <input type="radio" name="tipo_de_rendimento" id="bruto" checked value="bruto">
-                <label for="liquido">Líquido</label>
-                <input type="radio" name="tipo_de_rendimento" id="liquido" value="liquido">
-              </fieldset>
+                <label for="bruto">Bruto</label><input type="radio" name="tipo_de_rendimento" id="liquido" value="liquido"><label for="liquido">Líquido</label>
+              </div>
               <label for="aporte__inicial">Aporte Inicial</label>
-              <input type="text" name="Aporte_inicial" id="aporte__inicial" required placeholder="R$">
+              <input type="number" name="Aporte_inicial" id="aporte__inicial" required placeholder="R$">
               <label for="prazo">Prazo(em meses)</label>
-              <input type="text" name="prazo" id="prazo" required>
+              <input type="number" name="prazo" id="prazo" required>
               <label for="IPCA">IPCA (ao ano)</label>
-              <input type="text" name="IPCA" id="IPCA" required>
+              <input type="text" name="IPCA" id="IPCA" disabled>
             </form>
 
           </div>
@@ -45,20 +43,16 @@
             </a> 
             <br>           
             <form class="right__form">
-              <fieldset>
-                <label for="pre">PRÉ</label>
+              <div class="custom__radio_2">
                 <input type="radio" name="indexacao" id="pre" value="PRE">
-                <label for="pos">PÓS</label>
-                <input type="radio" name="indexacao" id="pos" value="POS" checked>
-                <label for="fixado">FIXADO</label>
-                <input type="radio" name="indexacao" id="fixado" value="FIXADO">
-              </fieldset>
+                <label for="pre">PRÉ</label><input type="radio" name="indexacao" id="pos" value="POS" checked><label for="pos">PÓS</label><input type="radio" name="indexacao" id="fixado" value="FIXADO"><label for="fixado">FIXADO</label>
+              </div>
               <label for="aporte__mensal">Aporte Mensal</label>
-              <input type="text" name="aporte__mensal" id="aporte__mensal" placeholder="R$">
+              <input type="number" name="aporte__mensal" id="aporte__mensal" placeholder="R$">
               <label for="rentabilidade">Rentabilidade</label>
-              <input type="text" name="rentabilidade" id="rentabilidade">
+              <input type="number" name="rentabilidade" id="rentabilidade">
               <label for="CDI"> CDI (ao ano)</label>
-              <input type="text" name="CDI" id="CDI">
+              <input type="text" name="CDI" id="CDI" disabled>
             </form>
 
           </div>

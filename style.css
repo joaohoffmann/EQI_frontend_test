@@ -1,3 +1,10 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -48,13 +55,12 @@ img{
 .container__left{
   padding: 0 30px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  align-items: stretch;
 }
 
 .container__left__rendimento {
   display: inline;
-  margin-right:15px; 
+  margin-right:25px; 
 }
 
 .container__left__rendimento img{
@@ -63,66 +69,52 @@ img{
   margin-bottom: 2px;
 }
 .container__left__rendimento span{
-  margin-bottom: 10px;
   color: #777;
+  margin-right: 25px;
 }
 
-.btn__requisitos {
-  margin-top: 10px;
-  border: none;
-  background: #F05F17;
-  cursor: pointer;
-  padding: 20px;
-  color: #fff;
-  border-radius: 20px;
-}
 .container__left__indexacao {
   display: inline;
-  margin-left:15px; 
 }
+
 .container__left__indexacao img{
   vertical-align: middle;
   margin-left: 30px;
   margin-bottom: 2px;
 }
 .container__left__indexacao span{
-  margin-bottom: 5px;
   color: #777;
+  margin-right: 25px;
 }
 
-.container__left__bottom{
-  display: inline;
-  margin-left:15px; 
-}
-.container__left__bottom button{
-  margin-top: 10px;
-  border: none;
-  background: #F05F17;
-  cursor: pointer;
-  padding: 20px;
-  color: #fff;
-  border-radius: 20px;
-}
+
 
 .left__form{
   display: flex;
   flex-direction: column;
-  padding: 15px 0px;
+  padding: 30px 0px 15px;
 }
-.left__form fieldset{
-  border: 0 none;
-  padding: 15px 0px;
+.left__form input[type="number"]{
+  border: none;
+  border-bottom: 1px solid #777;
+  background: none;
+  outline: none;
+  padding: 5px;
+  margin: 15px 0px;
+  border-radius: 5px;
+  transition: all ease .5s;
+  color: #000;
 }
-
 .left__form input[type="text"]{
   border: none;
   border-bottom: 1px solid #777;
   background: none;
   outline: none;
   padding: 5px;
-  margin: 10px 0px;
+  margin: 15px 0px;
   border-radius: 5px;
   transition: all ease .5s;
+  color: #000;
 }
 
 .left__form input:focus{
@@ -132,11 +124,18 @@ img{
 .right__form{
   display: flex;
   flex-direction: column;
-  padding: 15px 0px;
+  padding: 30px 0px 15px;
 }
-.right__form fieldset {
+.right__form input[type="number"]{
   border: none;
-  padding: 15px 0px;
+  border-bottom: 1px solid #777;
+  background: none;
+  outline: none;
+  padding: 5px;
+  margin: 15px 0px;
+  border-radius: 5px;
+  transition: all ease .5s;
+  color: #000;
 }
 .right__form input[type="text"]{
   border: none;
@@ -144,9 +143,10 @@ img{
   background: none;
   outline: none;
   padding: 5px;
-  margin: 10px 0px;
+  margin: 15px 0px;
   border-radius: 5px;
   transition: all ease .5s;
+  color: #000;
 }
 .right__form input:focus{
   border-bottom: 1px solid red;
@@ -163,8 +163,11 @@ img{
   width: 400px;
 }
 .container__left__bottom button{
-  margin-right: 20px;
-  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  margin-right: 15px;
+  padding: 15px 45px;
+  cursor: pointer;
 }
 #btn__clear{
   background: rgba(180, 148, 148, 0.856);
@@ -177,7 +180,89 @@ img{
   color: #ffff;
   transition: all ease .2s;
 }
-
-#btn__clear:hover , #btn__submit:hover{
-  box-shadow: 0px 0px 15px #666;
+#btn__clear:hover, #btn__submit:hover{
+  box-shadow: 0px 0px 10px 2px rgb(15, 15, 15);
 }
+.custom__radio{
+vertical-align: middle;
+display: inline-block;
+margin-bottom: 30px;
+}
+.custom__radio_2{
+vertical-align: middle;
+display: inline-block;
+margin-bottom: 30px;
+
+}
+
+input[type="radio"]{
+  display: none;
+}
+#bruto + label{
+  cursor: pointer;
+  border: 1px solid #000;
+  margin: 0px;
+  border-radius: 100px 0px 0px 100px;
+  padding:10px 25px;
+  background-color: aliceblue;
+  transition: all ease .25s;
+  
+}
+#bruto:checked + label{
+  background-color: #E8743F;
+  color: #fff;
+}
+#liquido + label{
+  cursor: pointer;
+  border: 1px solid #000;
+  margin: 0px;
+  border-radius: 0px 100px 100px 0px;
+  padding:10px 20px;
+  background-color: aliceblue;
+  transition: all ease .25s;
+
+}
+#liquido:checked + label{
+  background-color: #E8743F;
+  color: #fff;
+}
+
+#pre + label{
+  border: 1px solid #000;
+  padding:10px 25px;
+  background-color: aliceblue;
+  border-radius: 100px 0px 0px 100px;
+  transition: all ease .25s;
+  cursor: pointer;
+
+
+}
+#pre:checked + label{
+  background-color: #E8743F;
+  color: #fff;
+}
+#pos + label{
+  border: 1px solid #000;
+  padding:10px 25px;
+  background-color: aliceblue;
+  transition: all ease .25s;
+  cursor: pointer;
+}
+#fixado + label{
+  border: 1px solid #000;
+  padding:10px 15px;
+  background-color: aliceblue;
+  border-radius: 0px 100px 100px 0px;
+  transition: all ease .25s;
+  cursor: pointer;
+}
+#pos:checked + label{
+  background-color: #E8743F;
+  color: #fff;
+}
+#fixado:checked + label{
+  background-color: #E8743F;
+  color: #fff;
+}
+
+
