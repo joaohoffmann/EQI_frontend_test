@@ -8,13 +8,69 @@
 </head>
 <body>
   <div class="container__master">
-    <div class="container__header">
-      <header></header>
-    </div>
     <div class="container__main">
-      <main></main>
+      <div class="container__title">
+        <h1>Simulador de Investimentos</h1>
+      </div>
+      <main>
+        <div class="container__left__subtitle">
+          <h2>Simulador</h2>
+        </div>
+        <div class="container__left">
+          <div class="container__left__rendimento">
+            <span>Rendimento</span>
+            <a href="#">
+              <img src="./img/info_icon.png" alt="">
+            </a>  <br>
+            <form class="left__form" >
+              <fieldset>
+                <label for="bruto">Bruto</label>
+                <input type="radio" name="tipo_de_rendimento" id="bruto" checked value="bruto">
+                <label for="liquido">Líquido</label>
+                <input type="radio" name="tipo_de_rendimento" id="liquido" value="liquido">
+              </fieldset>
+              <label for="aporte__inicial">Aporte Inicial</label>
+              <input type="text" name="Aporte_inicial" id="aporte__inicial" required placeholder="R$">
+              <label for="prazo">Prazo(em meses)</label>
+              <input type="text" name="prazo" id="prazo" required>
+              <label for="IPCA">IPCA (ao ano)</label>
+              <input type="text" name="IPCA" id="IPCA" required>
+            </form>
+
+          </div>
+          <div class="container__left__indexacao">
+            <span>Tipos de indexção</span> 
+            <a href="#">
+              <img src="./img/info_icon.png" alt="">
+            </a> 
+            <br>           
+            <form class="right__form">
+              <fieldset>
+                <label for="pre">PRÉ</label>
+                <input type="radio" name="indexacao" id="pre" value="PRE">
+                <label for="pos">PÓS</label>
+                <input type="radio" name="indexacao" id="pos" value="POS" checked>
+                <label for="fixado">FIXADO</label>
+                <input type="radio" name="indexacao" id="fixado" value="FIXADO">
+              </fieldset>
+              <label for="aporte__mensal">Aporte Mensal</label>
+              <input type="text" name="aporte__mensal" id="aporte__mensal" placeholder="R$">
+              <label for="rentabilidade">Rentabilidade</label>
+              <input type="text" name="rentabilidade" id="rentabilidade">
+              <label for="CDI"> CDI (ao ano)</label>
+              <input type="text" name="CDI" id="CDI">
+            </form>
+
+          </div>
+        </div>
+        <div class="container__left__bottom">
+          <button type="reset" id="btn__clear">Limpar Campos</button>
+          <button type="submit" id="btn__submit" >Simular</button>
+        </div>
+      </main>
     </div>
   </div>
-  
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>  
 </body>
 </html>
