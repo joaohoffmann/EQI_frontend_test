@@ -11,4 +11,4 @@ Para executar o simulador é necessario ter instalado o código e a pasta "desaf
 Esse ultimo comando serve para hospedar a api na url "http://localhost:3000" e com isso chamar ela ao rodar as simulações. É necessario rodar esses comandos antes de abrir o index.html para que quando o script chame a api ela esteja online e não de conflito.
 
 
-Apos isso a é so abrir o index.html no navegador.
+Apos isso  é so abrir o index.html no navegador.
