@@ -44,7 +44,6 @@ getIndicadores()
         valor_final_liquido.innerHTML = `R$ ${item.valorPagoIR}`;
         valor_total_investido.innerHTML = `R$ ${item.valorTotalInvestido}`;
         ganho_liquido.innerHTML =`R$ ${item.ganhoLiquido}`
-        console.log(item)
       }    
     }   
   })
@@ -77,7 +76,7 @@ function getCamps() {
 //limpando os valores 
 
 btn__clear.addEventListener('click', function() {
-  document.querySelector('.container__right').style.opacity = "0"
+  document.querySelector('.container__right').style.display = "none"
   aporte__inicial.value = '';
   prazo.value = '';
   aporte__mensal.value = '';
@@ -91,7 +90,7 @@ btn__submit.addEventListener('click', function() {
   if(aporte__inicial.value !== '' && aporte__mensal.value !== '' && rentabilidade.value !== '' && prazo.valor !== '') {
     getCamps()
     getSimulacao()
-    document.querySelector('.container__right').style.opacity = "1"    
+    document.querySelector('.container__right').style.display="flex"    
   } else {
     alert("Campos ainda estão em branco.");
   }
